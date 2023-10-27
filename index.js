@@ -1,15 +1,14 @@
 const { createStore } = require("redux");
 
 const add_user = 'add_user';
-// states
 
+// states
 const initialUserState = {
     users: [],
     count: 0
 }
 
 //action - object - type, payload
-
 const addUserAction = (value) =>{
     return {
         type: add_user,
@@ -31,7 +30,6 @@ const userReducer = (state = initialUserState, action) =>{
 const store = createStore(userReducer);
 
 // store has 3 method - getState(), dispatch(), subscribe()
-
 store.subscribe(() => {
     console.log(store.getState())
 })
